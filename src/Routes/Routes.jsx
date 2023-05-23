@@ -2,6 +2,7 @@ import {
     createBrowserRouter
 } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
+import Blog from "../pages/Blog/Blog";
 import Home from "../pages/Shared/Home/Home";
 import LoginPage from "../pages/Shared/Login/LoginPage";
 
@@ -17,6 +18,10 @@ import LoginPage from "../pages/Shared/Login/LoginPage";
             {
                 path:'login',
                 element:<LoginPage></LoginPage>
+            },
+            {
+                path:'blog',
+                element:<Blog></Blog>
             }
         ]
     }

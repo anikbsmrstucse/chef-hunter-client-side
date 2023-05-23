@@ -1,0 +1,25 @@
+.content{
+    justify-content: end !important;
+}
+
+.title{
+    transition: 0.5s;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: default;
+}
+.title:hover{
+    background-color: #DDE6ED;
+}
+
+.bg-hover{
+    transition: .5s;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 10px;
+}
+.bg-hover:hover{
+    background-color: #DDE6ED;
+    margin-right: 5px;
+    padding: 8px 15px;
+}
