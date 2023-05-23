@@ -17,7 +17,7 @@ const Header = () => {
         >
           <Link to='/' className="text-decoration-none text-black me-1 bg-hover">Home</Link>
           <Link className="text-decoration-none text-black me-1 bg-hover" to='/blog'>Blog</Link>
-          <Link className="text-decoration-none text-black me-3 bg-hover">About</Link>
+          <Link to="/about" className="text-decoration-none text-black me-3 bg-hover">About</Link>
         </Nav>
         <Link to='/login' className="sm:mt-1"><Button className="fw-semibold" variant="warning">Login</Button></Link>
       </Navbar.Collapse>

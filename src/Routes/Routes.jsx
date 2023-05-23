@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Blog from "../pages/Blog/Blog";
+import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Home from "../pages/Shared/Home/Home";
 import LoginPage from "../pages/Shared/Login/LoginPage";
 
@@ -10,6 +11,7 @@ import LoginPage from "../pages/Shared/Login/LoginPage";
     {
         path:'/',
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',

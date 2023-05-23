@@ -2,7 +2,7 @@
     font-size: 1.5rem;
 }
 .img-res{
-    width: 50%;
+    width: 40%;
 }
 @media only screen and (max-width:756px) {
     .img-res{
