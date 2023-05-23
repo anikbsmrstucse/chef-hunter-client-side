@@ -1,0 +1,18 @@
+.chef-info{
+    width: 60%;
+}
+.chef-img{
+    width: 40%;
+}
+
+@media screen and (max-width:765px) {
+    .chef-info{
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+        padding-left: 0 !important;
+    }
+    .chef-img{
+        width: 100%;
+    }
+}

@@ -3,10 +3,10 @@ import { FaThumbsUp } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
-  const { id, name, experience, number_of_recipes, image, likes } = chef;
+  const { id, name, experience, number_of_recipes, image, likes} = chef;
   return (
     <>
-      <div classNameName="col">
+      <div className="col">
         <div className="card my-3 shadow">
           <img
             src={image}

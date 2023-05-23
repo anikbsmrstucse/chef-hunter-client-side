@@ -2,7 +2,10 @@ import {
     createBrowserRouter
 } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
+import RecipiesLayout from "../Layout/RecipiesLayout";
+import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
+import Recipies from "../pages/Recipies/Recipies";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Home from "../pages/Shared/Home/Home";
 import LoginPage from "../pages/Shared/Login/LoginPage";
@@ -24,6 +27,22 @@ import LoginPage from "../pages/Shared/Login/LoginPage";
             {
                 path:'blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'about',
+                element:<About></About>
+            }
+        ],
+    },
+    {
+        path:'recipies',
+        element:<RecipiesLayout></RecipiesLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
+        children:[
+            {
+                path:':id',
+                element:<Recipies></Recipies>,
+                loader: ({params}) => fetch(`http://localhost:5000/allchef/${params.id}`) 
             }
         ]
     }

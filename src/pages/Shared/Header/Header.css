@@ -2,6 +2,10 @@
     justify-content: end !important;
 }
 
+.active{
+    color: tomato !important;
+}
+
 .title{
     transition: 0.5s;
     padding: 8px 10px;
