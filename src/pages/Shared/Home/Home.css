@@ -1,0 +1,22 @@
+.font-size{
+    font-size: 1.5rem;
+}
+.img-res{
+    width: 50%;
+}
+@media only screen and (max-width:756px) {
+    .img-res{
+        width: 85%;
+    }
+    .text-align {
+        text-align: center;
+    }
+    .margin-left{
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    .margin-left .font-size {
+        font-size: 1rem;
+    }
+
+}
