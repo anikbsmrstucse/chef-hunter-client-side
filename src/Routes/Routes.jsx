@@ -9,6 +9,7 @@ import Recipies from "../pages/Recipies/Recipies";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Home from "../pages/Shared/Home/Home";
 import LoginPage from "../pages/Shared/Login/LoginPage";
+import Register from "../pages/Shared/Register/Register";
 
   const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ import LoginPage from "../pages/Shared/Login/LoginPage";
             {
                 path:'login',
                 element:<LoginPage></LoginPage>
+            },
+            {
+                path:'register',
+                element:<Register></Register>
             },
             {
                 path:'blog',

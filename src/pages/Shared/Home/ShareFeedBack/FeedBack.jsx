@@ -22,15 +22,15 @@ const FeedBack = () => {
           <Col md={6}>
             <h2>Share Your FeedBack</h2>
             <Form onSubmit={handleFeedbaack}>
-              <Form.Group controlId="formName">
+              <Form.Group controlId="">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" name="name" placeholder="Enter your name" />
               </Form.Group>
-              <Form.Group controlId="formEmail">
+              <Form.Group controlId="">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" name="email" placeholder="Enter your email" />
               </Form.Group>
-              <Form.Group controlId="formMessage">
+              <Form.Group controlId="">
                 <Form.Label>Feedback</Form.Label>
                 <Form.Control
                   as="textarea"
