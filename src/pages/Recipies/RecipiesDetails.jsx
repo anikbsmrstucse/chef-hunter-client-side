@@ -1,11 +1,20 @@
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { FaHeart } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import IngridentList from "./IngridentList";
 import './RecipieDetails.css';
 
 const RecipiesDetails = ({ recipe }) => {
+    const [disable,setDisabel] = useState(false)
+    const addToFavorites = () => {
+        setDisabel(true);
+        toast("Added to Favorites");
+
+    }
   console.log(recipe);
   const { ingredients, method, name, rating } = recipe;
   return (
@@ -29,9 +38,10 @@ const RecipiesDetails = ({ recipe }) => {
         <div class="card-footer d-flex align-items-center" style={{position:"absolute" ,bottom:'0',width:"100%"}}>
         
         <span className="flex-grow-1 d-flex align-items-center"> <Rating style={{width:"100px"}} value={(rating)} readOnly></Rating> <span className='mt-1 ms-1'>{rating}</span></span>
-          <Button variant="warning">
-            Add to Favorites
+          <Button onClick={addToFavorites} disabled={disable} variant="warning">
+           <FaHeart className='text-danger' style={{fontSize:"1.2rem"}}></FaHeart> Add to Favorites
           </Button>
+          <ToastContainer></ToastContainer>
         </div>
       </div>
     </div>
