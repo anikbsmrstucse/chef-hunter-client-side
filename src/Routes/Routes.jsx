@@ -48,7 +48,7 @@ import Register from "../pages/Shared/Register/Register";
             {
                 path:':id',
                 element:<PrivateRoute><Recipies></Recipies></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/allchef/${params.id}`) 
+                loader: ({params}) => fetch(`https://assignment-10-chef-hunter-server-anikbsmrstucse.vercel.app/allchef/${params.id}`) 
             }
         ]
     }
