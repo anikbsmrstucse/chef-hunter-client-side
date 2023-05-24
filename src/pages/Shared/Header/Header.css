@@ -33,6 +33,12 @@
     border-radius: 50%;
     margin-right: 8px;
 }
+small .name{
+    display: none;
+}
+small .name:hover{
+    display: block;
+}
 
 @media screen and (max-width:576px) {
     .btn-user{

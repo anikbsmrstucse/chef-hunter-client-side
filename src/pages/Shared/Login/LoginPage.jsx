@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../../AuthProviders/AuthProvider";
 import "./LoginPage.css";
@@ -9,7 +9,10 @@ import "./LoginPage.css";
 const LoginPage = () => {
   const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+  console.log(from);
+  console.log(location);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -22,8 +25,8 @@ const LoginPage = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from);
         toast("Login Sucessfully");
-        navigate('/');
       })
       .catch((error) => {
         console.log(error.message);
@@ -40,8 +43,9 @@ const LoginPage = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from);
         toast("Login Sucessfully");
-        navigate('/');
+        
       })
       .catch((error) => {
         console.log(error.message);
@@ -53,8 +57,9 @@ const LoginPage = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate(from);
         toast("Login Sucessfully");
-        navigate('/');
+        
       })
       .catch((error) => {
         console.log(error.message);

@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../../../AuthProviders/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     logOut()
       .then(() => {
+        navigate(location);
         toast("logout Successfully");
       })
       .catch((error) => {
@@ -54,8 +57,8 @@ const Header = () => {
           <div style={{ position: "relative" }}>
             
             <small
-              className="text-white name"
-              style={{ position: "absolute", left: "5px", bottom: "8px" }}
+              className="text-white"
+              style={{ position: "absolute", left: "5px", bottom: "8px",}}
             >
               {user?.displayName}
             </small>

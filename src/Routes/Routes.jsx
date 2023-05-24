@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import RecipiesLayout from "../Layout/RecipiesLayout";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
 import Recipies from "../pages/Recipies/Recipies";
@@ -46,7 +47,7 @@ import Register from "../pages/Shared/Register/Register";
         children:[
             {
                 path:':id',
-                element:<Recipies></Recipies>,
+                element:<PrivateRoute><Recipies></Recipies></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/allchef/${params.id}`) 
             }
         ]

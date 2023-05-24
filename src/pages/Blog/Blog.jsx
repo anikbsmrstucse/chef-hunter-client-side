@@ -6,6 +6,7 @@ import { Card, Col, Row } from "react-bootstrap";
 
 const Blog = () => {
 
+
     const pdfRef = useRef();
 
     const downloadPDF = () => {
