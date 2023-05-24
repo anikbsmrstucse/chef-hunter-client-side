@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+
+    const [acc,setAcc] = useState(false);
+
+    const handleAccepted = (event) => {
+        console.log(event.target.checked);
+        setAcc(event.target.checked);
+    }
+
   return (
     <div>
       <Container className="login-res">
@@ -28,7 +36,16 @@ const Register = () => {
             <Form.Label className="mb-0">Confirm Password</Form.Label>
             <Form.Control type="password" placeholder="Confirm your password" />
           </Form.Group>
-          <Button className="w-100 mt-2 mb-2" variant="warning" type="submit">
+          
+          <Form.Group controlId="formchechox" className="mb-1">
+            <Form.Check style={{fontSize:"0.8rem"}}
+            onClick={handleAccepted}
+            type="checkbox"
+            name="accept"
+            label="Accept Terms and Conditions"
+            />
+          </Form.Group>
+          <Button className="w-100 mt-2 mb-2" disabled={!acc} variant="warning" type="submit">
             Register
           </Button>
           <small className="mb-0 mt-3">
