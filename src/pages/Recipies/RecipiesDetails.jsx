@@ -19,10 +19,10 @@ const RecipiesDetails = ({ recipe }) => {
   const { ingredients, method, name, rating } = recipe;
   return (
     <div className="col">
-      <div class="card card-new mb-4 shadow" >
+      <div className="card card-new mb-4 shadow" >
         <div className="p-3">
-          <h3 class="card-title">{name}</h3>
-          <p class="card-text">
+          <h3 className="card-title">{name}</h3>
+          <p className="card-text">
             <span className="fw-bold">Method:</span>
             {method}
           </p>
@@ -35,7 +35,7 @@ const RecipiesDetails = ({ recipe }) => {
             ))}
           </div>
         </div>
-        <div class="card-footer d-flex align-items-center" style={{position:"absolute" ,bottom:'0',width:"100%"}}>
+        <div className="card-footer d-flex align-items-center" style={{position:"absolute" ,bottom:'0',width:"100%"}}>
         
         <span className="flex-grow-1 d-flex align-items-center"> <Rating style={{width:"100px"}} value={(rating)} readOnly></Rating> <span className='mt-1 ms-1'>{rating}</span></span>
           <Button onClick={addToFavorites} disabled={disable} variant="warning">
@@ -49,3 +49,4 @@ const RecipiesDetails = ({ recipe }) => {
 };
 
 export default RecipiesDetails;
+

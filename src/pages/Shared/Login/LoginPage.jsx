@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,14 +11,14 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
-  console.log(from);
-  console.log(location);
+  const [error,setError] = useState('');
 
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+    setError('');
     console.log(email, password);
     if(email,password){
       userLogin(email,password)
@@ -30,6 +30,7 @@ const LoginPage = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        setError(error.message);
       });
     }
     else{
@@ -104,7 +105,7 @@ const LoginPage = () => {
           </div>
 
           <p className="text-sucess"></p>
-          <p className="text-danger"></p>
+          <small><p className="text-danger">{error}</p></small>
         </Form>
         <ToastContainer></ToastContainer>
       </Container>
