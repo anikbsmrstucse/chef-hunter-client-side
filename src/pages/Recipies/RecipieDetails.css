@@ -1,0 +1,10 @@
+.card-new{
+    height: 600px;
+    position: relative;
+}
+
+@media screen and (max-width:765px) {
+    .card-new{
+        height: 700px;
+    }
+}

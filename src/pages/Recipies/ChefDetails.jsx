@@ -39,7 +39,8 @@ const ChefDetails = ({ ChefDetails }) => {
           </div>
         </div>
       </div>
-      <div>
+      <hr className='m-0'/>
+      <div className="row row-cols-1 row-cols-md-2 mt-5 mx-5">
         {recipes.map((recipe,index) => <RecipiesDetails key={index} recipe={recipe}></RecipiesDetails>)}
       </div>
     </div>
